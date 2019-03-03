@@ -2,7 +2,11 @@
     "name": "puzzle-controller",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-dashboard": "^2.14.0",
+        "node-red-node-arduino": "^0.1.0",
+        "node-red-node-serialport": "^0.7.0"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flow.json",
