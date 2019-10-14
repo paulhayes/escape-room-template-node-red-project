@@ -1167,34 +1167,6 @@
         ]
     },
     {
-        "id": "e6718820.cd7e88",
-        "type": "arduino in",
-        "z": "b1ae7875.db48b8",
-        "name": "",
-        "pin": "14",
-        "state": "PULLUP",
-        "arduino": "76dee732.bc8d58",
-        "x": 140,
-        "y": 340,
-        "wires": [
-            [
-                "6d788016.21fcb"
-            ]
-        ]
-    },
-    {
-        "id": "312b6b70.c35944",
-        "type": "arduino out",
-        "z": "b1ae7875.db48b8",
-        "name": "",
-        "pin": "15",
-        "state": "",
-        "arduino": "76dee732.bc8d58",
-        "x": 380,
-        "y": 420,
-        "wires": []
-    },
-    {
         "id": "23efea60.44eea6",
         "type": "inject",
         "z": "b1ae7875.db48b8",
@@ -1205,12 +1177,13 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "0",
+        "onceDelay": "0.1",
         "x": 170,
         "y": 420,
         "wires": [
             [
-                "312b6b70.c35944"
+                "312b6b70.c35944",
+                "5b17e622.ffd608"
             ]
         ]
     },
@@ -1227,6 +1200,59 @@
         "targetType": "msg",
         "x": 330,
         "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e6718820.cd7e88",
+        "type": "arduino in",
+        "z": "b1ae7875.db48b8",
+        "name": "",
+        "pin": "14",
+        "state": "PULLUP",
+        "arduino": "76dee732.bc8d58",
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "6d788016.21fcb",
+                "6f0a6a69.0ff654"
+            ]
+        ]
+    },
+    {
+        "id": "312b6b70.c35944",
+        "type": "arduino out",
+        "z": "b1ae7875.db48b8",
+        "name": "",
+        "pin": "15",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 380,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "5b17e622.ffd608",
+        "type": "arduino out",
+        "z": "b1ae7875.db48b8",
+        "name": "",
+        "pin": "5",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 370,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "6f0a6a69.0ff654",
+        "type": "arduino out",
+        "z": "b1ae7875.db48b8",
+        "name": "",
+        "pin": "4",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 370,
+        "y": 500,
         "wires": []
     }
 ]
