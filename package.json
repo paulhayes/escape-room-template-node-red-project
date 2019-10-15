@@ -3,9 +3,10 @@
     "description": "A Node-RED Project",
     "version": "0.0.1",
     "dependencies": {
-        "node-red-dashboard": "^2.14.0",
-        "node-red-node-arduino": "^0.1.0",
-        "node-red-node-serialport": "^0.7.0"
+        "node-red-dashboard": "^2.17.0",
+        "node-red-node-arduino": "^0.2.2",
+        "node-red-node-serialport": "^0.8.8",
+        "node-red-contrib-usb-hid-relay": "^0.2.4"
     },
     "node-red": {
         "settings": {
