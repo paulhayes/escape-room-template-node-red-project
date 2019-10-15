@@ -49,6 +49,41 @@
         "info": ""
     },
     {
+        "id": "47ec3c35.097624",
+        "type": "tab",
+        "label": "Key",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "6c771f2e.d15f6",
+        "type": "tab",
+        "label": "RED Leds",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "23d211bd.2d4b6e",
+        "type": "tab",
+        "label": "Relays",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c97f3632.8ed9c8",
+        "type": "tab",
+        "label": "Servo",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a67dba90.981d28",
+        "type": "tab",
+        "label": "LED Dial",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "d2623fd5.e1fd1",
         "type": "ui_base",
         "z": "",
@@ -218,7 +253,7 @@
         "newline": "\\n",
         "bin": "false",
         "out": "char",
-        "addchar": "",
+        "addchar": "\\n",
         "responsetimeout": "10000"
     },
     {
@@ -242,6 +277,28 @@
         "type": "arduino-board",
         "z": "",
         "device": "COM13"
+    },
+    {
+        "id": "78f90a5a.5d36e4",
+        "type": "arduino-board",
+        "z": "",
+        "device": "COM19"
+    },
+    {
+        "id": "993673c5.7789d",
+        "type": "serial-port",
+        "z": "",
+        "serialport": "COM21",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "\\n",
+        "responsetimeout": "10000"
     },
     {
         "id": "46e2b868.2c1a18",
@@ -417,7 +474,7 @@
         "type": "debug",
         "z": "43a9b478.44ee7c",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1125,7 +1182,7 @@
         "y": 180,
         "wires": [
             [
-                "e1c339ed.3890d8"
+                "de397d74.f264c"
             ]
         ]
     },
@@ -1139,7 +1196,7 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 320,
+        "x": 390,
         "y": 180,
         "wires": []
     },
@@ -1184,34 +1241,18 @@
         ]
     },
     {
-        "id": "323d9761.6c5248",
-        "type": "debug",
-        "z": "685a1b4c.2d2aa4",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 310,
-        "y": 160,
-        "wires": []
-    },
-    {
         "id": "4d27f671.1db328",
         "type": "arduino in",
         "z": "685a1b4c.2d2aa4",
         "name": "",
-        "pin": "14",
+        "pin": "12",
         "state": "PULLUP",
         "arduino": "76dee732.bc8d58",
-        "x": 120,
-        "y": 160,
+        "x": 110,
+        "y": 20,
         "wires": [
             [
-                "323d9761.6c5248",
-                "5d1ca55e.a76a6c"
+                "a78328a3.a3dd08"
             ]
         ]
     },
@@ -1220,23 +1261,11 @@
         "type": "arduino out",
         "z": "685a1b4c.2d2aa4",
         "name": "",
-        "pin": "5",
-        "state": "OUTPUT",
-        "arduino": "76dee732.bc8d58",
-        "x": 310,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "5d1ca55e.a76a6c",
-        "type": "arduino out",
-        "z": "685a1b4c.2d2aa4",
-        "name": "",
-        "pin": "4",
+        "pin": "1",
         "state": "OUTPUT",
         "arduino": "76dee732.bc8d58",
         "x": 330,
-        "y": 200,
+        "y": 500,
         "wires": []
     },
     {
@@ -1248,10 +1277,11 @@
             "4d27f671.1db328"
         ],
         "x": 60,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
-                "2ff78e2f.c551b2"
+                "2ff78e2f.c551b2",
+                "bd95bd5d.d2459"
             ]
         ]
     },
@@ -1263,7 +1293,7 @@
         "pin": "13",
         "state": "OUTPUT",
         "arduino": "76dee732.bc8d58",
-        "x": 320,
+        "x": 340,
         "y": 300,
         "wires": []
     },
@@ -1272,10 +1302,10 @@
         "type": "arduino out",
         "z": "685a1b4c.2d2aa4",
         "name": "",
-        "pin": "13",
+        "pin": "17",
         "state": "OUTPUT",
         "arduino": "76dee732.bc8d58",
-        "x": 320,
+        "x": 340,
         "y": 380,
         "wires": []
     },
@@ -1287,7 +1317,7 @@
         "pin": "15",
         "state": "OUTPUT",
         "arduino": "76dee732.bc8d58",
-        "x": 320,
+        "x": 340,
         "y": 340,
         "wires": []
     },
@@ -1301,7 +1331,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "0",
+                "to": "1",
                 "tot": "num"
             }
         ],
@@ -1310,14 +1340,14 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 160,
-        "y": 420,
+        "x": 120,
+        "y": 480,
         "wires": [
             [
-                "4420244.4172edc",
-                "192ffe4b.a3ac62",
-                "3ccf3489.deec8c",
-                "bf396980.8734a8"
+                "bf396980.8734a8",
+                "7d7d9bd3.186334",
+                "b19adf4b.32064",
+                "c17597ff.202cb8"
             ]
         ]
     },
@@ -1428,5 +1458,961 @@
                 "da530766.203cb8"
             ]
         ]
+    },
+    {
+        "id": "7d7d9bd3.186334",
+        "type": "arduino out",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "3",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 330,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "b19adf4b.32064",
+        "type": "arduino out",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "5",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 330,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "c17597ff.202cb8",
+        "type": "arduino out",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "7",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 330,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "b778b2e4.8b9b3",
+        "type": "arduino out",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "19",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 340,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "bd95bd5d.d2459",
+        "type": "change",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 120,
+        "y": 440,
+        "wires": [
+            [
+                "192ffe4b.a3ac62",
+                "4420244.4172edc",
+                "3ccf3489.deec8c",
+                "b778b2e4.8b9b3"
+            ]
+        ]
+    },
+    {
+        "id": "12b7a086.d328bf",
+        "type": "arduino in",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "14",
+        "state": "PULLUP",
+        "arduino": "76dee732.bc8d58",
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "dbe66d6f.a0fe6"
+            ]
+        ]
+    },
+    {
+        "id": "f92602d8.8b1b4",
+        "type": "arduino out",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "2",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 310,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dbe66d6f.a0fe6",
+        "type": "arduino out",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "4",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 310,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "74581a95.aa2164",
+        "type": "arduino in",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "16",
+        "state": "PULLUP",
+        "arduino": "76dee732.bc8d58",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "f92602d8.8b1b4"
+            ]
+        ]
+    },
+    {
+        "id": "b659b22f.7cd8a",
+        "type": "arduino in",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "18",
+        "state": "PULLUP",
+        "arduino": "76dee732.bc8d58",
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "a127c966.b1a9a8"
+            ]
+        ]
+    },
+    {
+        "id": "a78328a3.a3dd08",
+        "type": "arduino out",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "6",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 310,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "a127c966.b1a9a8",
+        "type": "arduino out",
+        "z": "685a1b4c.2d2aa4",
+        "name": "",
+        "pin": "0",
+        "state": "OUTPUT",
+        "arduino": "76dee732.bc8d58",
+        "x": 310,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "de397d74.f264c",
+        "type": "function",
+        "z": "bdfc2121.4389c",
+        "name": "trim newlines",
+        "func": "msg.payload = msg.payload.trim();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 230,
+        "y": 180,
+        "wires": [
+            [
+                "e1c339ed.3890d8"
+            ]
+        ]
+    },
+    {
+        "id": "ef1fbdd.00ff34",
+        "type": "arduino in",
+        "z": "47ec3c35.097624",
+        "name": "",
+        "pin": "14",
+        "state": "PULLUP",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 80,
+        "y": 100,
+        "wires": [
+            [
+                "36f1a646.ac0f2a"
+            ]
+        ]
+    },
+    {
+        "id": "2189c4d3.3b9fbc",
+        "type": "arduino out",
+        "z": "47ec3c35.097624",
+        "name": "",
+        "pin": "15",
+        "state": "OUTPUT",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 380,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a0808d56.bec94",
+        "type": "status",
+        "z": "47ec3c35.097624",
+        "name": "",
+        "scope": [
+            "ef1fbdd.00ff34"
+        ],
+        "x": 60,
+        "y": 220,
+        "wires": [
+            [
+                "fe3089a.e552678"
+            ]
+        ]
+    },
+    {
+        "id": "fe3089a.e552678",
+        "type": "change",
+        "z": "47ec3c35.097624",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 220,
+        "wires": [
+            [
+                "2189c4d3.3b9fbc"
+            ]
+        ]
+    },
+    {
+        "id": "36f1a646.ac0f2a",
+        "type": "debug",
+        "z": "47ec3c35.097624",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 260,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "34859c26.50c624",
+        "type": "change",
+        "z": "47ec3c35.097624",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c26a360.220cac",
+        "type": "arduino out",
+        "z": "6c771f2e.d15f6",
+        "name": "",
+        "pin": "13",
+        "state": "OUTPUT",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 380,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "673e65ff.6fc15c",
+        "type": "inject",
+        "z": "6c771f2e.d15f6",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "4c26a360.220cac"
+            ]
+        ]
+    },
+    {
+        "id": "8506405.72239c",
+        "type": "arduino out",
+        "z": "6c771f2e.d15f6",
+        "name": "",
+        "pin": "12",
+        "state": "OUTPUT",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 380,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "b4ce54f1.7777f8",
+        "type": "arduino out",
+        "z": "6c771f2e.d15f6",
+        "name": "",
+        "pin": "10",
+        "state": "OUTPUT",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 380,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f3e06787.adf718",
+        "type": "inject",
+        "z": "6c771f2e.d15f6",
+        "name": "",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "4c26a360.220cac"
+            ]
+        ]
+    },
+    {
+        "id": "6f4a38fc.61b008",
+        "type": "inject",
+        "z": "6c771f2e.d15f6",
+        "name": "",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "8506405.72239c"
+            ]
+        ]
+    },
+    {
+        "id": "65f57baf.0e3d94",
+        "type": "inject",
+        "z": "6c771f2e.d15f6",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "8506405.72239c"
+            ]
+        ]
+    },
+    {
+        "id": "9f6e2ffd.c2223",
+        "type": "inject",
+        "z": "6c771f2e.d15f6",
+        "name": "",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "b4ce54f1.7777f8"
+            ]
+        ]
+    },
+    {
+        "id": "6332de39.bbed8",
+        "type": "inject",
+        "z": "6c771f2e.d15f6",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "b4ce54f1.7777f8"
+            ]
+        ]
+    },
+    {
+        "id": "2481e5a7.4b6a9a",
+        "type": "comment",
+        "z": "6c771f2e.d15f6",
+        "name": "leds",
+        "info": "",
+        "x": 130,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "84362ea3.9ab0e",
+        "type": "arduino out",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "pin": "11",
+        "state": "OUTPUT",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 330,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "54a61fd2.8d91d",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "7fb7f95e.cf88e8"
+            ]
+        ]
+    },
+    {
+        "id": "7fb7f95e.cf88e8",
+        "type": "arduino out",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "pin": "4",
+        "state": "OUTPUT",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 330,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e155b194.a72f6",
+        "type": "arduino out",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "pin": "5",
+        "state": "OUTPUT",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 330,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4a8cb3a9.92db9c",
+        "type": "arduino out",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "pin": "6",
+        "state": "OUTPUT",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 330,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "6860c788.0abfb8",
+        "type": "arduino out",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "pin": "7",
+        "state": "OUTPUT",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 330,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "bcf3093c.81e5e8",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "7fb7f95e.cf88e8"
+            ]
+        ]
+    },
+    {
+        "id": "80a14ea8.e5339",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "e155b194.a72f6"
+            ]
+        ]
+    },
+    {
+        "id": "b6b79116.14d98",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "e155b194.a72f6"
+            ]
+        ]
+    },
+    {
+        "id": "786e729d.78fd8c",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "4a8cb3a9.92db9c"
+            ]
+        ]
+    },
+    {
+        "id": "a106cae0.1d9578",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "4a8cb3a9.92db9c"
+            ]
+        ]
+    },
+    {
+        "id": "e642027e.6f6b4",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 440,
+        "wires": [
+            [
+                "6860c788.0abfb8"
+            ]
+        ]
+    },
+    {
+        "id": "fed53d73.24d75",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [
+                "6860c788.0abfb8"
+            ]
+        ]
+    },
+    {
+        "id": "2c580a6a.721a16",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "84362ea3.9ab0e"
+            ]
+        ]
+    },
+    {
+        "id": "13fca583.cffafa",
+        "type": "inject",
+        "z": "23d211bd.2d4b6e",
+        "name": "",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "84362ea3.9ab0e"
+            ]
+        ]
+    },
+    {
+        "id": "a0a0693e.691198",
+        "type": "comment",
+        "z": "23d211bd.2d4b6e",
+        "name": "relays",
+        "info": "",
+        "x": 90,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e579b63f.d98d78",
+        "type": "arduino out",
+        "z": "c97f3632.8ed9c8",
+        "name": "",
+        "pin": "3",
+        "state": "SERVO",
+        "arduino": "78f90a5a.5d36e4",
+        "x": 340,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "eefdbeeb.956f3",
+        "type": "inject",
+        "z": "c97f3632.8ed9c8",
+        "name": "",
+        "topic": "",
+        "payload": "20",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "e579b63f.d98d78"
+            ]
+        ]
+    },
+    {
+        "id": "7abd0dd0.9f93a4",
+        "type": "inject",
+        "z": "c97f3632.8ed9c8",
+        "name": "",
+        "topic": "",
+        "payload": "170",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "e579b63f.d98d78"
+            ]
+        ]
+    },
+    {
+        "id": "fce8bb3c.d80888",
+        "type": "serial in",
+        "z": "a67dba90.981d28",
+        "name": "LED Dial",
+        "serial": "993673c5.7789d",
+        "x": 60,
+        "y": 60,
+        "wires": [
+            [
+                "6724e411.41193c"
+            ]
+        ]
+    },
+    {
+        "id": "4b0063a8.27917c",
+        "type": "debug",
+        "z": "a67dba90.981d28",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 390,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6724e411.41193c",
+        "type": "function",
+        "z": "a67dba90.981d28",
+        "name": "parse dial input",
+        "func": "let output = new Array(3);\n\nlet keyValue = msg.payload.trim().split(\"=\");\n\nlet value = keyValue[1];\n\nmsg.key = keyValue[0];\n\nif(msg.key==\"B0\"){\n    output[0] = {payload:parseInt(value)};\n}\nelse if(msg.key==\"C0\"){\n    vals = value.split(\" \");\n    output[1] = {payload:parseInt(vals[0])};\n    output[2] = {payload:parseInt(vals[1])};\n}\n\nreturn output;",
+        "outputs": 3,
+        "noerr": 0,
+        "x": 220,
+        "y": 60,
+        "wires": [
+            [
+                "4b0063a8.27917c"
+            ],
+            [
+                "1167a7b1.7d3b68"
+            ],
+            [
+                "dfd8e71e.a8ec78"
+            ]
+        ]
+    },
+    {
+        "id": "2b3a623b.0dffbe",
+        "type": "serial out",
+        "z": "a67dba90.981d28",
+        "name": "LED Dial",
+        "serial": "993673c5.7789d",
+        "x": 330,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9eb36f1f.4773a",
+        "type": "inject",
+        "z": "a67dba90.981d28",
+        "name": "",
+        "topic": "",
+        "payload": "color red",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "2b3a623b.0dffbe"
+            ]
+        ]
+    },
+    {
+        "id": "fd56869a.1decb8",
+        "type": "inject",
+        "z": "a67dba90.981d28",
+        "name": "",
+        "topic": "",
+        "payload": "color blue",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "2b3a623b.0dffbe"
+            ]
+        ]
+    },
+    {
+        "id": "2f8b63dc.145cac",
+        "type": "inject",
+        "z": "a67dba90.981d28",
+        "name": "",
+        "topic": "",
+        "payload": "color green",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 380,
+        "wires": [
+            [
+                "2b3a623b.0dffbe"
+            ]
+        ]
+    },
+    {
+        "id": "c568d4b6.9aca58",
+        "type": "inject",
+        "z": "a67dba90.981d28",
+        "name": "",
+        "topic": "",
+        "payload": "color f000f0",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "2b3a623b.0dffbe"
+            ]
+        ]
+    },
+    {
+        "id": "1167a7b1.7d3b68",
+        "type": "debug",
+        "z": "a67dba90.981d28",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 390,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "dfd8e71e.a8ec78",
+        "type": "debug",
+        "z": "a67dba90.981d28",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 390,
+        "y": 120,
+        "wires": []
     }
 ]
